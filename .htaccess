@@ -1,0 +1,12 @@
+#ErrorDocument 404 /Ql_Nha_hang/404.html
+#ErrorDocument 403 /Ql_Nha_hang/403.html
+#([0-9]+)
+#([a-zA-Z0-9-_]+)
+#Turn on the rewriting engine 
+ReWriteEngine on
+RewriteRule ^trang-chu$ index.php 
+RewriteRule ^tin-tuc$ tin_tuc.php
+RewriteRule ^huong-dan-mua-hang$ huong_dan.php
+RewriteRule ^thong-tin-lien-he$ lien_he.php
+RewriteRule ^gio-hang$ gio_hang.php
+RewriteRule ^sach-chi-tiet-([0-9]+)$ sach_chi_tiet.php?id=$1

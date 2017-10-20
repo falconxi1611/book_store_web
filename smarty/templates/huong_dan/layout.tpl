@@ -1,0 +1,1 @@
+{extends file='tin_tuc/layout.tpl'}
