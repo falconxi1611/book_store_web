@@ -104,10 +104,10 @@
 					<ul class="nav navbar-nav">
                     
                     {*THAY ĐỔI ĐƯỜNG LINK VỚI HTACCESS*}
-						<li class="active"><a href="trang-chu" class="act">TRANG CHỦ</a></li>	
+						<li class="active"><a href="trang-chu" class="{$act1}">TRANG CHỦ</a></li>
 						<!-- Mega Menu -->
 						<li class="dropdown">
-							<a href="sach.php" class="dropdown-toggle" data-toggle="dropdown">DANH MỤC<b class="caret"></b></a>
+							<a href="sach.php" class="dropdown-toggle" data-toggle="dropdown" class="{$act2}">DANH MỤC<b class="caret"></b></a>
 							<ul class="dropdown-menu multi-column columns-3">
 								<div class="row">
 									{foreach $loai_sachs as $loai}
@@ -123,10 +123,10 @@
 								</div>
 							</ul>
 						</li>
-                     	<li><a href="tin-tuc">TIN TỨC</a></li>
-						<li><a href="huong-dan-mua-hang">HƯỚNG DẪN MUA HÀNG</a></li>
+                     	<li><a href="tin-tuc" class="{$act3}">TIN TỨC</a></li>
+						<li><a href="huong-dan-mua-hang" class="{$act4}">HƯỚNG DẪN MUA HÀNG</a></li>
                         
-						<li><a href="thong-tin-lien-he">LIÊN HỆ</a></li>
+						<li><a href="thong-tin-lien-he" class="{$act5}">LIÊN HỆ</a></li>
 					</ul>
 				</div>
 			</nav>

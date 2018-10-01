@@ -62,6 +62,7 @@ class C_home
 		$smarty->assign('lst', $lst);
 		$smarty->assign('nxbs', $nxbs);
 		$smarty->assign("str",$str);
+		$smarty->assign("act1",'act');
 		$smarty->display("layout.tpl");
 	}
 }
