@@ -107,7 +107,7 @@
 						<li class="active"><a href="trang-chu" class="{$act1}">TRANG CHỦ</a></li>
 						<!-- Mega Menu -->
 						<li class="dropdown">
-							<a href="sach.php" class="dropdown-toggle" data-toggle="dropdown" class="{$act2}">DANH MỤC<b class="caret"></b></a>
+							<a href="sach.php" class="{$act2}" data-toggle="dropdown">DANH MỤC<b class="caret"></b></a>
 							<ul class="dropdown-menu multi-column columns-3">
 								<div class="row">
 									{foreach $loai_sachs as $loai}

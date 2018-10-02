@@ -150,7 +150,7 @@
 							<section>
 								<div class="modal-body">
 									<div class="col-md-5 modal_body_left">
-										<img src="public/layout/images/{$sach_moi->hinh}" alt=" " class="img-responsive" id="my_hinh"/>
+										<img src="public/layout/images/{$sach_noi_bat->hinh}" alt=" " class="img-responsive" id="my_hinh"/>
 									</div>
 									<div class="col-md-7 modal_body_right">
 										<h4>{$sach_noi_bat->gioi_thieu}</h4>
