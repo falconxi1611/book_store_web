@@ -36,7 +36,7 @@
 							<li>
                             {*THAY ĐỔI ĐƯỜNG LINK VỚI HTACCESS*}
                             
-								<a href="sach-chi-tiet-{$sach->id}" data-toggle="modal" data-target="#sach{$sach->id}"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+								<a href="#" data-toggle="modal" data-target="#sach{$sach->id}"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
 							</li>
 						</ul>
 					</div>
