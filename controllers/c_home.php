@@ -51,7 +51,13 @@ class C_home
         $smarty = new Smarty_book();
         $title  = "FT Book Store";
         //$smarty->assign('lst',$lst); //Hiển thị phân trang
-
+        if (isset($_SESSION["username"]))
+        {
+            $flg_login = 1;
+            $smarty->assign('flg_login', $flg_login);
+            $smarty->assign('username', $_SESSION["username"]);
+            $smarty->assign('avatar', $_SESSION["avatar"]);
+        }
         $smarty->assign('sach_yeu_thichs', $sach_yeu_thichs);//Hiển thị sách yêu thích
         $smarty->assign('sach_noi_bats', $sach_noi_bats);//Hiển thị sách trên bottom banner
         $smarty->assign('sach_mois', $sach_mois);//Hiển thị sách trên bottom banner

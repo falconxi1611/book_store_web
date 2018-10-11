@@ -15,6 +15,13 @@ class C_lien_he
         $title  = 'Nhà sách liên hệ | Liên hệ';
         $smarty->assign('title', $title);
         $view = 'views/v_lien_he.tpl';
+        if (isset($_SESSION["username"]))
+        {
+            $flg_login = 1;
+            $smarty->assign('flg_login', $flg_login);
+            $smarty->assign('username', $_SESSION["username"]);
+            $smarty->assign('avatar', $_SESSION["avatar"]);
+        }
         $smarty->assign("act5", 'act');
         $smarty->assign('view', $view);
         $smarty->assign('loai_sachs', $loai_sachs);

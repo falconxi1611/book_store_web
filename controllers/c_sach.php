@@ -61,6 +61,13 @@ class C_sach
         include("Smarty_Book.php");
         $smarty = new Smarty_book();
         $title  = "FT Book Store";
+        if (isset($_SESSION["username"]) > 0)
+        {
+            $flg_login = 1;
+            $smarty->assign('flg_login', $flg_login);
+            $smarty->assign('username', $_SESSION["username"]);
+            $smarty->assign('avatar', $_SESSION["avatar"]);
+        }
         $smarty->assign('title', $title);
         $smarty->assign('loai_sachs', $loai_sachs);
         $smarty->assign('slides', $slides);
@@ -102,6 +109,13 @@ class C_sach
         include("Smarty_Book.php");
         $smarty = new Smarty_book();
         $title  = "FT Book Store";
+        if (isset($_SESSION["username"]) > 0)
+        {
+            $flg_login = 1;
+            $smarty->assign('flg_login', $flg_login);
+            $smarty->assign('username', $_SESSION["username"]);
+            $smarty->assign('avatar', $_SESSION["avatar"]);
+        }
         $smarty->assign('loai_sachs', $loai_sachs);  //HIển thị tại header
         $smarty->assign('slides', $slides);
         $smarty->assign('title', $title);
@@ -151,6 +165,13 @@ class C_sach
 
         include('controllers/Smarty_Book.php');
         $smarty = new Smarty_Book();
+        if (isset($_SESSION["username"]))
+        {
+            $flg_login = 1;
+            $smarty->assign('flg_login', $flg_login);
+            $smarty->assign('username', $_SESSION["username"]);
+            $smarty->assign('avatar', $_SESSION["avatar"]);
+        }
         $smarty->assign('sach_yeu_thichs', $sach_yeu_thichs);
         $smarty->assign('sach_mois', $sach_mois);
         $smarty->assign('nxb', $nxb);

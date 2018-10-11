@@ -37,6 +37,14 @@ class C_tin_tuc
         include('Smarty_Book.php');
         $smarty = new Smarty_book();
         $title  = 'Nhà sách FTStore | Tin Tức';
+
+        if (strlen($_SESSION["username"]) > 0)
+        {
+            $flg_login = 1;
+            $smarty->assign('flg_login', $flg_login);
+            $smarty->assign('username', $_SESSION["username"]);
+            $smarty->assign('avatar', $_SESSION["avatar"]);
+        }
         $smarty->assign('slides', $slides); //Hiển thị banner
         $smarty->assign('title', $title);
         $smarty->assign('tin_tucs', $tin_tucs);

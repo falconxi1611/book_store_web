@@ -17,6 +17,13 @@ class C_huong_dan
         include('Smarty_Book.php');
         $smarty = new Smarty_book();
         $title  = 'Nhà sách FTStore | Hướng dẫn mua hàng';
+        if (isset($_SESSION["username"]))
+        {
+            $flg_login = 1;
+            $smarty->assign('flg_login', $flg_login);
+            $smarty->assign('username', $_SESSION["username"]);
+            $smarty->assign('avatar', $_SESSION["avatar"]);
+        }
         $smarty->assign('title', $title);
         $smarty->assign("act4",'act');
         $view = 'views/v_huong_dan.tpl';

@@ -30,18 +30,25 @@
         <div class="contact-w3left">
             <img src="public/layout/login/images/3.png" alt=" ">
         </div>
+        {if isset($flg_err)}
+            <div align="center" style="color: #990000" class="alert alert-danger" role="alert">
+                {foreach $flg_err as $err}
+                    {$err}<br>
+                {/foreach}
+            </div>
+        {/if}
         <div class="contact-grid agileits">
             <form action="#" method="post">
                 <div class="w3ls-icon">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <input type="text" name="Name" placeholder="Username" required="">
+                    <input type="text" name="username" placeholder="Username" required="">
                 </div>
                 <div class="w3ls-icon">
                     <i class="fa fa-unlock" aria-hidden="true"></i>
                     <input type="password" name="password" placeholder="Password" required="">
                 </div>
                 <div class="">
-                    <input type="submit" value="Login">
+                    <input type="submit" name="btn_login" value="Login">
                 </div>
                 <div class="social-wthree-icons bnragile-icons">
                     <p>Or</p>

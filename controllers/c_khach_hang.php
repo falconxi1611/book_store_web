@@ -1,5 +1,5 @@
 <?php
-
+@session_start();
 class C_khach_hang
 {
 	public function __construct()
@@ -54,6 +54,13 @@ class C_khach_hang
         else
         {
     		$view='views/khach_hang/v_them_khach_hang.tpl';
+            if (isset($_SESSION["username"]) > 0)
+            {
+                $flg_login = 1;
+                $smarty->assign('flg_login', $flg_login);
+                $smarty->assign('username', $_SESSION["username"]);
+                $smarty->assign('avatar', $_SESSION["avatar"]);
+            }
         	$smarty->assign('view',$view);
         	$smarty->display('gio_hang/layout.tpl');   
         }       
