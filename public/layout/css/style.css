@@ -61,7 +61,7 @@ input[type="submit"],.panel-body ul li a,.checkout-right-basket a,.additional_in
     height: 50px;
     display: block;
     text-align: center;
-    border: 1px solid #BEBEBE;
+    /*border: 1px solid #BEBEBE;*/
 }
 .w3l_login a span{
 	top:1.3em;
@@ -4331,4 +4331,13 @@ td.invert-image a img {
 {
 	height: 578.328px;
 
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu#login {
+    left: 0%;
 }

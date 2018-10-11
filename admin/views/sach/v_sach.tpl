@@ -40,7 +40,7 @@ function Hoi_xoa(id)
         <tr>
           
           <td>{$sach->id}</td>
-          <td><a href="suatintuc.php?ma_sach=" title="Edit">{$sach->ten_sach}</a></td>
+          <td><a href="suasach.php?ma_sach=" title="Edit">{$sach->ten_sach}</a></td>
           {foreach $loai_sachs as $loai}
           	{if $sach->id_loai_sach == $loai->id}
 		  <td>{$loai->ten_loai_sach}</td>

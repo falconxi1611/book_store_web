@@ -10,4 +10,3 @@ class Smarty_quan_tri extends Smarty {
 		$this->setCompileDir('Smarty/templates_c');
    }
 }
-?>
