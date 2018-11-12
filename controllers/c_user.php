@@ -7,7 +7,7 @@ require_once("models/m_user.php");
 //CONST
 const LINK_HOME = "index.php";
 
-class C_login
+class C_user
 {
     function Init_Display()
     {
@@ -23,9 +23,14 @@ class C_login
 
     function Sign_In()
     {
+        //Create new class Smarty_Book
         $smarty   = new Smarty_Book();
+
+        //Declare variable
         $username = trim($_POST["username"], " ");
         $password = trim($_POST["password"], " ");
+
+        //Array Error Check Validate
         $err[]    = checkErrorInput($username, $password);
 
         if (isset($_POST["btn_login"]))

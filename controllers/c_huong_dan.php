@@ -25,7 +25,7 @@ class C_huong_dan
             $smarty->assign('avatar', $_SESSION["avatar"]);
         }
         $smarty->assign('title', $title);
-        $smarty->assign("act4",'act');
+        $smarty->assign("act4", 'act');
         $view = 'views/v_huong_dan.tpl';
         $smarty->assign('view', $view);
         $smarty->assign('loai_sachs', $loai_sachs);

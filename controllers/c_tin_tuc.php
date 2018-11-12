@@ -38,7 +38,7 @@ class C_tin_tuc
         $smarty = new Smarty_book();
         $title  = 'Nhà sách FTStore | Tin Tức';
 
-        if (strlen($_SESSION["username"]) > 0)
+        if (isset($_SESSION["username"]))
         {
             $flg_login = 1;
             $smarty->assign('flg_login', $flg_login);

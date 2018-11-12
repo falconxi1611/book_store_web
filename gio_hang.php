@@ -15,6 +15,7 @@ if (isset($_POST["btnCapnhat"]))
             $c_gio_hang->xoaMatHang($key, $_POST[$key]);
         }
     }
+
     //Cập nhật lại giỏ hàng
     $giohang = $c_gio_hang->layGioHang();
     if ($giohang)
@@ -29,5 +30,5 @@ if (isset($_POST["btnCapnhat"]))
         }
     }
 }
+
 $c_gio_hang->xem_gio_hang();
-?>

@@ -1,8 +1,8 @@
 <?php
-include("controllers/c_login.php");
+include("controllers/c_user.php");
 
 //Create class login
-$c_login = new C_Login();
+$c_login = new C_user();
 
 //Check login
 if (isset($_POST['btn_login']) > 0)
@@ -15,7 +15,7 @@ if (isset($_GET["logout"]))
 }
 else
 {
-    //Display login template
+    //Display login itinial
     $c_login->Init_Display();
 }
 
