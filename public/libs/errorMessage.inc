@@ -1,17 +1,33 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ductoan
- * Date: 11-Oct-18
- * Time: 21:39
+ * <pre>
+ * <p>[Summary]</p>
+ * Library for check error
+ * </pre>
+ *
+ * @author ToanLD
  */
-define("ERR101", "Vui lòng nhập vào Username");
-define("ERR102", "Vui lòng nhập vào Password");
-define("ERR103", "Username có độ tối đa 32 ký tự");
-define("ERR104", "Password có độ tối đa 64 ký tự");
-define("ERR105", "Username hoặc Password không hợp lệ");
 
-function checkErrorInput($user_name, $password)
+/** Error code Login */
+const ERR101 = 'Vui lòng nhập vào Username';
+const ERR102 = 'Vui lòng nhập vào Password';
+const ERR103 = 'Username có độ tối đa 32 ký tự';
+const ERR104 = 'Password có độ tối đa 64 ký tự';
+const ERR105 = 'Username hoặc Password không hợp lệ';
+
+
+/**
+ * <pre>
+ * <p>[Summary]</p>
+ * Check data input login
+ * </pre>
+ *
+ * @param  string $user_name Username
+ * @param  object $password  Password
+ *
+ * @return array $err Error Code
+ */
+function checkErrorInputLogin($user_name, $password)
 {
     $err = array();
     if (strlen($user_name) == 0)

@@ -36,7 +36,7 @@
                     </tr>
 
                     <tr>
-                        <td align="center">Hình thức thanh toán<br/>
+                        <td align="center" >Hình thức thanh toán<br/>
                             <input type="radio" name="httt" value="tiền mặt" checked="true"/> Tiền mặt
                             <input type="radio" name="httt" value="chuyển khoản"/> Chuyển khoản
                             <input type="radio" name="httt" value="tín dụng"/> Tín dụng

@@ -1,13 +1,25 @@
 <?php
-ini_set("display_errors", 1);
+/**
+ * <pre>
+ * <p>[Summary]</p>
+ * Route for Cart
+ * </pre>
+ *
+ * @author ToanLD3
+ *
+ *
+ */
 include("controllers/c_gio_hang.php");
+ini_set("display_errors", 1);
+
+/** Create Cart Controller $c_gio_hang */
 $c_gio_hang = new C_gio_hang();
 
 if (isset($_POST["btnCapnhat"]))
 {
     $giohang = $c_gio_hang->layGioHang();
-    // echo "<pre>"; print_r($giohang); "</pre>";
-    //Xóa mặt hàng trong giỏ hàng
+
+    //Delete item in cart
     foreach ($giohang as $key => $value)
     {
         if (isset($_POST[$key]))
@@ -16,7 +28,7 @@ if (isset($_POST["btnCapnhat"]))
         }
     }
 
-    //Cập nhật lại giỏ hàng
+    //Update item in cart
     $giohang = $c_gio_hang->layGioHang();
     if ($giohang)
     {
@@ -31,4 +43,5 @@ if (isset($_POST["btnCapnhat"]))
     }
 }
 
+/** Render to view cart */
 $c_gio_hang->xem_gio_hang();

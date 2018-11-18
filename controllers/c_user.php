@@ -15,7 +15,7 @@ class C_user
         {
             header('Location: ' . LINK_HOME);
         }
-        //View
+
         $smarty = new Smarty_book();
         $smarty->display("login.tpl");
     }
@@ -23,15 +23,12 @@ class C_user
 
     function Sign_In()
     {
-        //Create new class Smarty_Book
         $smarty   = new Smarty_Book();
 
-        //Declare variable
         $username = trim($_POST["username"], " ");
         $password = trim($_POST["password"], " ");
 
-        //Array Error Check Validate
-        $err[]    = checkErrorInput($username, $password);
+        $err[]    = checkErrorInputLogin($username, $password);
 
         if (isset($_POST["btn_login"]))
         {
@@ -39,7 +36,7 @@ class C_user
             $password = $_POST["password"];
 
             //Validate
-            $err = checkErrorInput($username, $password);
+            $err = checkErrorInputLogin($username, $password);
             if (count($err) > 0)
             {
                 $smarty->assign("flg_err", $err);
