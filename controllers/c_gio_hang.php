@@ -14,7 +14,7 @@ const VIEW_CART = 'views/gio_hang/v_gio_hang.tpl';
 /**
  * <pre>
  * <p>[Summary]</p>
- * Controller Cart
+ * Controller Cart Processing
  * </pre>
  *
  * @author ToanLD3

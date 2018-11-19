@@ -1,4 +1,14 @@
 <?php
+/**
+ * <pre>
+ * <p>[Summary]</p>
+ * Route for customer
+ * </pre>
+ *
+ * @author ToanLD3
+ *
+ *
+ */
 include "controllers/c_khach_hang.php";
 $c_khach_hang=new C_khach_hang();
 if(isset($_GET['key'])) 
@@ -9,5 +19,3 @@ if(isset($_GET['key']))
         $c_khach_hang->dang_ky();
     }
 }
-
-?>

@@ -1,13 +1,17 @@
 <?php
 @session_start();
+include_once('controllers/c_gio_hang.php');
 
 /** Define Constant */
-const TITLE_CUSTOMER = 'FT Book Store';
-const VIEW_CUSTOMER = 'gio_hang/layout.tpl';
+const TITLE_CUSTOMER  = 'FT Book Store';
+const VIEW_CUSTOMER   = 'gio_hang/layout.tpl';
+const VIEW_ADD        = 'views/khach_hang/v_them_khach_hang.tpl';
+const VIEW_PRINT_BILL = 'views/khach_hang/v_in_hoa_don.tpl';
+
 /**
  * <pre>
  * <p>[Summary]</p>
- * Controller Customer
+ * Controller Customer Processing
  * </pre>
  *
  * @author ToanLD3
@@ -61,27 +65,28 @@ class C_khach_hang
 
                 if ($don_hang > 0)
                 {
-                    include_once('controllers/c_gio_hang.php');
                     $c_gio_hang = new c_gio_hang();
                     $gio_hang   = $c_gio_hang->layGioHang();
                     foreach ($gio_hang as $key => $value)
                     {
                         $m_khach_hang->themChiTietDonHang($don_hang, $key, $value, 0);
                     }
+
                     $m_khach_hang->capNhatDonGia_sach($don_hang);
                     $m_khach_hang->capNhatTongTien($don_hang);
                     if ($tien_dat_coc >= 0)
+                    {
                         $m_khach_hang->capNhatTienConLai($don_hang);
+                    }
+
                     $c_gio_hang->xoaGioHang();
-                    $view = "views/khach_hang/v_in_hoa_don.tpl";
-                    $smarty->assign('view', $view);
+                    $smarty->assign('view', VIEW_PRINT_BILL);
                     $smarty->display(VIEW_CUSTOMER);
                 }
             }
         }
         else
         {
-            $view = 'views/khach_hang/v_them_khach_hang.tpl';
             if (isset($_SESSION["username"]) > 0)
             {
                 $flg_login = 1;
@@ -89,7 +94,7 @@ class C_khach_hang
                 $smarty->assign('username', $_SESSION["username"]);
                 $smarty->assign('avatar', $_SESSION["avatar"]);
             }
-            $smarty->assign('view', $view);
+            $smarty->assign('view', VIEW_ADD);
             $smarty->display(VIEW_CUSTOMER);
         }
     }

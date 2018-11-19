@@ -2,20 +2,36 @@
 session_start();
 include("Smarty_quan_tri.php");
 include("models/m_tin_tuc.php");
+include('Pager.php');
 
-//Const
+/** Define Constant */
 const TITLE     = "Quản lý Nhà Sách FT Store";
 const TIEU_DE   = "Danh sách tin tức";
 const VIEW_LIST = "views/tintuc/v_tintuc.tpl";
+const LAYOUT    = "location:tintuc.php";
 
-/*
- * Controller C_tin_tuc
+
+/**
+ * <pre>
+ * <p>[Summary]</p>
+ * Controller News Processing
+ * </pre>
+ *
+ * @author ToanLD3
+ *
  */
 class C_tin_tuc
 {
+    /**
+     * <pre>
+     * <p>[Summary]</p>
+     * </pre>
+     * Display intinial news
+     *
+     */
     function Hien_thi_tin_tuc()
     {
-        // Thông báo
+        // Message
         $msg = isset($_SESSION["msg"]) ? $_SESSION["msg"] : "";
         if (isset($_SESSION["msg"])) unset($_SESSION["msg"]);
 
@@ -23,9 +39,7 @@ class C_tin_tuc
         $m_tin_tuc = new M_tin_tuc();
         $tin_tuc   = $m_tin_tuc->Doc_tin_tuc();
 
-
-        //Phan trang
-        include('Pager.php');
+        //Pagenation
         $p       = new pager();
         $limit   = 6;
         $count   = count($tin_tuc);
@@ -47,6 +61,13 @@ class C_tin_tuc
 
     }
 
+    /**
+     * <pre>
+     * <p>[Summary]</p>
+     * </pre>
+     * Add news
+     *
+     */
     function Them_tin_tuc()
     {
         // Models
@@ -75,7 +96,7 @@ class C_tin_tuc
             {
                 $_SESSION["msg"] = "Thêm tin tức bị lỗi";
             }
-            header("location:tintuc.php");
+            header(LAYOUT);
         }
 
         // View
@@ -89,6 +110,13 @@ class C_tin_tuc
 
     }
 
+    /**
+     * <pre>
+     * <p>[Summary]</p>
+     * </pre>
+     * Update news
+     *
+     */
     function Sua_tin_tuc()
     {
         // Models
@@ -123,7 +151,7 @@ class C_tin_tuc
             {
                 $_SESSION["msg"] = "Sửa tin tức bị lỗi";
             }
-            header("location:tintuc.php");
+            header(LAYOUT);
         }
 
 
@@ -135,10 +163,17 @@ class C_tin_tuc
         $smarty->assign("tieude", "Sửa tin tức");
 
         $smarty->assign("view", "views/tintuc/v_Suatintuc.tpl");
-        $smarty->display("layout.tpl");
+        $smarty->display(LAYOUT);
 
     }
 
+    /**
+     * <pre>
+     * <p>[Summary]</p>
+     * </pre>
+     * Delete news
+     *
+     */
     function Xoa_tin_tuc()
     {
         $id        = $_GET["ma_tin_tuc"];
@@ -152,10 +187,6 @@ class C_tin_tuc
         {
             $_SESSION["msg"] = "Xóa tin tức bị lỗi";
         }
-        header("location:tintuc.php");
+        header(LAYOUT);
     }
-
-
 }
-
-?>

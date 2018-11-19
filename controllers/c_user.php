@@ -4,7 +4,15 @@ include("Smarty_Book.php");
 include("public/libs/errorMessage.inc");
 require_once("models/m_user.php");
 
-//CONST
+/**
+ * <pre>
+ * <p>[Summary]</p>
+ * Controller user
+ * </pre>
+ *
+ * @author ToanLD3
+ *
+ */
 const LINK_HOME = "index.php";
 
 class C_user
