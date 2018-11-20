@@ -18,6 +18,13 @@ const VIEW_BOOK_NXB    = 'views/sach_nxb/v_sach.tpl';
 const TITLE            = 'FT Book Store';
 
 
+/**
+ * <pre>
+ * <p>[Summary]</p>
+ * View book data processing controller
+ * </pre>
+ *
+ */
 class C_sach
 {
     /**
