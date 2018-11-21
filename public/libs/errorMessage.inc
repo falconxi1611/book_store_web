@@ -22,8 +22,11 @@ const ERR203 = 'Vui lòng nhập địa chỉ';
 const ERR204 = 'Vui lòng nhập số điện thoại';
 const ERR205 = 'Vui lòng nhập họ tên tối 50 ký tự';
 const ERR206 = 'Vui lòng nhập đúng định dạng email';
-const ERR207 = 'Vui lòng địa chỉ tối đa 100 ký tự';
+const ERR207 = 'Vui lòng nhập địa chỉ tối đa 200 ký tự';
 const ERR208 = 'Vui lòng nhập số điện thoại tối đa 10 chữ số';
+const ERR209 = 'Vui lòng nhập ghi chú tối đa 200 ký tự';
+const ERR210 = 'Vui lòng nhập số điện thoại với định dạng là số';
+const ERR211 = 'Vui lòng nhập số tiền cọc với định dạng là số';
 
 
 /**
@@ -73,7 +76,7 @@ function checkErrorInputLogin($user_name, $password)
  *
  * @return array $err Error Code
  */
-function checkErrorInputOrder($ten_khach_hang, $email, $dia_chi, $dien_thoai)
+function checkErrorInputOrder($ten_khach_hang, $email, $dia_chi, $dien_thoai, $ghi_chu, $so_tien)
 {
     $flg_check = 0;
     $err = array();
@@ -110,6 +113,19 @@ function checkErrorInputOrder($ten_khach_hang, $email, $dia_chi, $dien_thoai)
     {
         $err[] = ERR208;
     }
+    if (strlen($ghi_chu) > 200)
+    {
+        $err[] = ERR209;
+    }
+    if(is_numeric($dien_thoai) == false)
+    {
+        $err[]= ERR210;
+    }
+    if(is_numeric($so_tien) == false)
+    {
+        $err[]= ERR211;
+    }
+
 
     return $err;
 }
