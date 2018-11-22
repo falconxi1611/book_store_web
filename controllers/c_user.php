@@ -31,12 +31,12 @@ class C_user
 
     function Sign_In()
     {
-        $smarty   = new Smarty_Book();
+        $smarty = new Smarty_Book();
 
         $username = trim($_POST["username"], " ");
         $password = trim($_POST["password"], " ");
 
-        $err[]    = checkErrorInputLogin($username, $password);
+        $err[] = checkErrorInputLogin($username, $password);
 
         if (isset($_POST["btn_login"]))
         {
@@ -64,6 +64,7 @@ class C_user
                 {
                     $_SESSION["username"] = $user->ho_ten;
                     $_SESSION["avatar"]   = $user->avatar;
+                    $_SESSION['customer'] = $user;
                     header('Location: ' . LINK_HOME);
                 }
             }

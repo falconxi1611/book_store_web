@@ -51,8 +51,9 @@ class C_khach_hang
             $dia_chi        = $_POST['dia_chi'];
             $dien_thoai     = $_POST['dien_thoai'];
             $ghi_chu        = $_POST['ghi_chu'];
+            $tien_dat_coc = $_POST['tien_dat_coc'];
             $m_khach_hang   = new M_khach_hang();
-            $err            = checkErrorInputOrder($ten_khach_hang, $email, $dia_chi, $dien_thoai);
+            $err            = checkErrorInputOrder($ten_khach_hang, $email, $dia_chi, $dien_thoai, $ghi_chu, $tien_dat_coc);
             if (count($err) > 0)
             {
                 $smarty->assign('error', $err);
@@ -67,7 +68,6 @@ class C_khach_hang
                     $ngay_dat     = date('Y-m-d');
                     $tong_tien    = 0;
                     $con_lai      = 0;
-                    $tien_dat_coc = $_POST['tien_dat_coc'];
                     $httt         = $_POST['httt'];
                     $ghi_chu      = "";
                     $don_hang     = $m_khach_hang->themDonHang($id_khach_hang, $ngay_dat, $tong_tien, $tien_dat_coc, $con_lai, $httt, $ghi_chu);
@@ -99,6 +99,10 @@ class C_khach_hang
         {
             if (isset($_SESSION["username"]) > 0)
             {
+                if(isset($_SESSION['customer']))
+                {
+                    $smarty->assign('customer',$_SESSION['customer']) ;
+                }
                 $flg_login = 1;
                 $smarty->assign('flg_login', $flg_login);
                 $smarty->assign('username', $_SESSION["username"]);

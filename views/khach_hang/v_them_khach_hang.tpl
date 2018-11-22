@@ -15,21 +15,21 @@
                     <tr>
                         <td align="center">
                             Tên khách hàng<br/>
-                            <input type="text" class="form-control" value="" name="ten_khach_hang"
+                            <input type="text" class="form-control" value="{if isset($customer)}{$customer->ho_ten}{/if}" name="ten_khach_hang"
                                    style="width:450px; text-align:center"/>
                     </tr>
                     <tr>
-                        <td align="center">Email<br/><input type="email" value="" name="email" class="form-control"
+                        <td align="center">Email<br/><input type="email" value="{if isset($customer)}{$customer->email}{/if}" name="email" class="form-control"
                                                             style="width:450px; text-align:center"/></td>
                     </tr>
                     <tr>
                         <td align="center">Địa chỉ<br/><textarea name="dia_chi"
                                                                  style="width:450px; text-align:center"
-                                                                 class="form-control" rows="5"></textarea></td>
+                                                                 class="form-control" rows="5">{if isset($customer)}{$customer->dia_chi}{/if}</textarea></td>
                     </tr>
                     <tr>
                         <td align="center">Điện thoại<br/><input type="text" name="dien_thoai"
-                                                                 style="width:450px; text-align:center"
+                                                                 style="width:450px; text-align:center" value="{if isset($customer)}{$customer->dien_thoai}{/if}"
                                                                  class="form-control"/></td>
                     </tr>
 
